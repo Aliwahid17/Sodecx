@@ -109,7 +109,7 @@ const Header = () => {
                 <Button title="Contact Us" href={paths.contact} toggleNav={toggleNav} />
                 <div className="flex justify-center items-center gap-3" >
                   <button onClick={() => { setTheme(theme === 'light' ? "dark" : 'light'), toggleNav(false) }} ><Image src={modeSrc} alt="Light And Dark Mood Icons" width={20} height={21} /></button>
-                  <button onClick={() => { changeLocale(currentLocale === 'en' ? "nl" : 'en'), toggleNav() }}><Image src={currentLocale === 'en' ? '../assets/icons/nl.svg' : '../assets/icons/en.svg'} alt="English And Dutch Flags" width={25} height={18} /></button>
+                  <button onClick={() => { changeLocale(currentLocale === 'en' ? "nl" : 'en'), toggleNav(false) }}><Image src={currentLocale === 'en' ? '../assets/icons/nl.svg' : '../assets/icons/en.svg'} alt="English And Dutch Flags" width={25} height={18} /></button>
                 </div>
               </div>
             </div>
