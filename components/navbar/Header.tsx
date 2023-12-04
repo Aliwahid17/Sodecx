@@ -19,9 +19,9 @@ const Header = () => {
   const currentPathName = pathName.split('/')[1] === 'nl' ? !pathName.split('/')[2] ? '/' : `/${pathName.split('/')[2]}` : pathName
 
   const [openNav, setOpenNav] = useState(false)
-  const [logoSrc, setLogoSrc] = useState('../assets/Logo.svg');
-  const [modeSrc, setModeSrc] = useState('../assets/icons/moon.svg')
-  const [themeColor, setThemeColor] = useState('#19191A')
+  const [logoSrc, setLogoSrc] = useState('../assets/LogoDark.svg');
+  const [modeSrc, setModeSrc] = useState('../assets/icons/sun.svg')
+  const [themeColor, setThemeColor] = useState('#F9FFFF')
 
   const navScroll = () => {
     if (!openNav) {
@@ -100,10 +100,10 @@ const Header = () => {
             {toggleButton}
 
             <div className="hidden lg:flex items-center justify-between w-2/3">
-              <div className="flex items-center justify-between  w-1/2 text-[#19191A]">
-                <Link href={paths.home} className="relative" >Home<span className={` ${currentPathName !== paths.home ? "hidden" : ""} absolute -bottom-1 left-1/2 w-1 h-1 bg-[#19191A] rounded-full `} /></Link>
-                <Link href={paths.about} className="relative" >About Us<span className={` ${currentPathName !== paths.about ? "hidden" : ""} absolute -bottom-1 left-1/2 w-1 h-1 bg-[#19191A] rounded-full `} /></Link>
-                <Link href={paths.services} className="relative" >Services<span className={` ${currentPathName !== paths.services ? "hidden" : ""} absolute -bottom-1 left-1/2 w-1 h-1 bg-[#19191A] rounded-full `} /></Link>
+              <div className="flex items-center justify-between  w-1/2 text-dark-primary">
+                <Link href={paths.home} className="relative" >Home<span className={` ${currentPathName !== paths.home ? "hidden" : ""} absolute -bottom-1 left-1/2 w-1 h-1 bg-dark-primary rounded-full `} /></Link>
+                <Link href={paths.about} className="relative" >About Us<span className={` ${currentPathName !== paths.about ? "hidden" : ""} absolute -bottom-1 left-1/2 w-1 h-1 bg-dark-primary rounded-full `} /></Link>
+                <Link href={paths.services} className="relative" >Services<span className={` ${currentPathName !== paths.services ? "hidden" : ""} absolute -bottom-1 left-1/2 w-1 h-1 bg-dark-primary rounded-full `} /></Link>
               </div>
               <div className="flex justify-center items-center gap-2" >
                 <Button title="Contact Us" href={paths.contact} toggleNav={toggleNav} />

@@ -1,8 +1,11 @@
-const HomeView = async () => {
+import HeroSection from "./HeroSection"
+
+const HomeView = async() => {
     return (
-        <div>
-        <div className="" >HomeView</div>
-        </div>
+        <main>
+            <HeroSection />
+            <div>Why Us</div>
+        </main>
     )
 }
 

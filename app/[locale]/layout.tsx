@@ -19,7 +19,7 @@ export default async function RootLayout({
 
   return (
     <html lang={currentLocale} suppressHydrationWarning>
-      <body className={`${urbanist.className} dark:bg-dark-primary bg-light-primary `}>
+      <body className={`${urbanist.className} dark:bg-dark-primary bg-light-primary text-dark-primary dark:text-light-primary `}>
         <SettingsProvider attribute="class">
           <Header />
           {children}
