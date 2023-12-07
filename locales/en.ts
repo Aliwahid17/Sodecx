@@ -1,3 +1,10 @@
+// Routes
+const navbar = {
+    home : 'Home',
+    about : 'About Us',
+    services : 'Services',
+}
+
 // Home Header
 const homeHeader = {
     title : 'Sodecx - Home',
@@ -11,10 +18,13 @@ const homeContent = {
 }
 
 export default {
+    // Navbar
+    navbar : navbar,
     // HTML HEAD FOR SEO
     head : {
         home : homeHeader
     },
+    // Page content
     home : homeContent
     
 } as const
