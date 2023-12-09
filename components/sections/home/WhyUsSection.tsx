@@ -2,21 +2,14 @@ import Image from "next/image"
 import WhyusImage from "./WhyusImage"
 import { getScopedI18n } from "@/locales/server"
 
-
 const WhyUsSection = async () => {
 
     const t = await getScopedI18n('home.whyUs')
 
     const whyUsPoints = [
-        {
-            title: t('points.first')
-        },
-        {
-            title: t('points.second')
-        },
-        {
-            title: t('points.third')
-        }
+        { title: t('points.first') },
+        { title: t('points.second') },
+        { title: t('points.third') }
     ]
 
     return (
