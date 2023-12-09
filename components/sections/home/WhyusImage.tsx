@@ -2,8 +2,8 @@
 import { useTheme } from 'next-themes'
 import { useLayoutEffect, useState } from 'react'
 import Image from 'next/image'
-import LaptopLight from '../../../public/assets/icons/home/whyusLight.svg'
-import LaptopDark from '../../../public/assets/icons/home/whyusDark.svg'
+import LaptopLight from '@assets/home/whyusLight.svg'
+import LaptopDark from '@assets/home/whyusDark.svg'
 
 const WhyusImage = () => {
     const { theme } = useTheme()
