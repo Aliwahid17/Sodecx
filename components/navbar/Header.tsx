@@ -5,7 +5,7 @@ import { useChangeLocale, useCurrentLocale } from "@locales/client"
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Button } from "@components/button";
 import { usePathname } from "next/navigation";
 
@@ -19,12 +19,18 @@ const Header = () => {
   const [openNav, setOpenNav] = useState(false)
   const [modeSrc, setModeSrc] = useState('../assets/icons/sun.svg')
   const [isVisible, setIsVisible] = useState(true);
+  const oldScrollPosition = useRef(0);
 
   const navScroll = () => {
     if (!openNav) {
+      oldScrollPosition.current = window.scrollY || document.documentElement.scrollTop;
       document.body.classList.add('overflow-hidden')
+      window.top?.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       document.body.classList.remove('overflow-hidden')
+      setTimeout(() => {
+        window.scrollTo({ top: oldScrollPosition.current, behavior: 'smooth' });
+      }, 0);
     }
   }
 

@@ -24,7 +24,6 @@
       "@locales/*": ["./locales/*"],
       "@components/*": ["./components/*"],
       "@context": ["./context"],
-      "@sections/*": ["./sections/*"],
       "@config/*": ["./config/*"],
     }
   },

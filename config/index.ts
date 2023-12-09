@@ -6,7 +6,7 @@ export const paths = {
 }
 
 export const socialMedia = {
-    facebook : 'https://www.facebook.com/sodecx',
-    instagram : 'https://www.instagram.com/sodecx/',
+    facebook: 'https://www.facebook.com/people/Sodecx/100090177834428/',
+    instagram: 'https://www.instagram.com/sodecx.official/',
     tiktok : 'https://www.tiktok.com/@sodecx',
 }

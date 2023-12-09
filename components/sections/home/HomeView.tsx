@@ -1,3 +1,4 @@
+import ContactSection from "./ContactSection"
 import HeroSection from "./HeroSection"
 import WhyUsSection from "./WhyUsSection"
 
@@ -6,6 +7,7 @@ const HomeView = async() => {
         <main>
             <HeroSection />
             <WhyUsSection />
+            {/* <ContactSection /> */}
         </main>
     )
 }

@@ -1,5 +1,5 @@
 import { getI18n, getScopedI18n } from '@/locales/server'
-import HomeView from '@/sections/home/HomeView'
+import HomeView from '@/components/sections/home/HomeView'
 import Head from 'next/head'
 import { Metadata } from 'next/types'
 
