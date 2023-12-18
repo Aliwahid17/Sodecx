@@ -10,28 +10,19 @@ const ContactSection = async () => {
 
     return (
         <section className='h-[calc(100vh-82px)] flex   justify-center items-center relative'>
-            <div className="container px-5  mx-auto xl:px-24">
+            <div className="container px-5  mx-auto  lg:px-24 xl:px-80">
 
                 <Image src='/assets/icons/home/Rectangle.svg' className="hidden xl:block h-[calc(100vh-100px)] absolute top-0 left-0" alt='Rectangle' width={338} height={517} />
 
                 <div className="flex flex-col gap-10  justify-center items-center">
                     <p className="text-2xl font-medium text-center ">
                         <span>{t('start')}</span>
-                        {/* <span className="border-4 whitespace-nowrap mx-1 border-t-teal-200  border-r-[#BBB6F4]   "> {t('keyword')} </span> */}
-                        {/* <div className="relative p-6  bg-dark-primary rounded-xl shadow-md flex items-center space-x-4">
-                            <div className="absolute inset-0 rounded-xl shadow-inner" aria-hidden="true"></div>
-                            <div className="relative">
-                                <div className="text-xl font-medium ">r online presence</div>
-                            </div>
-                        </div> */}
-
-                        {/* <div className="relative w-fit bg-light-primary dark:bg-dark-primary rounded-xl shadow-md flex items-center space-x-4">
-                            <div></div>
-                            <div>
-                                Hello
-                            </div>
-                        </div>   */}
-
+                        <span className="whitespace-nowrap relative p-1 mx-1.5 inline-flex items-center justify-center  overflow-hidden group rounded-md">
+                            <span className="absolute bg-gradient w-full h-full"></span>
+                            <span className="relative bg-light-primary dark:bg-dark-primary px-2 py-1 rounded-md ">
+                                {t('keyword')}
+                            </span>
+                        </span>
                         <span>{t('end')}</span>
                     </p>
                     <Button title={currentLocale === 'en' ? "Contact Us" : 'Contact'} href={paths.contact} />
