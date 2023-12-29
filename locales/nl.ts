@@ -46,9 +46,66 @@ const largeECommerce = {
     }
 }
 
+// About Us Page Content
+
+const creativeIdeas = {
+    title: 'Creatieve Ideeën',
+    description: 'Unieke merkgerichte projecten'
+}
+
+const onTimeDelivery = {
+    title: 'Tijdige levering',
+    description: 'We lanceren uw online aanwezigheid precies op tijd.'
+}
+
+const connectivity = {
+    title: 'Connectiviteit',
+    description: 'Een goed gestructureerde plek om uw klanten te ontmoeten'
+}
+
+// About Us Page What Do We Do
+
+const quality = {
+    title: 'Kwaliteit',
+    description: 'Klanttevredenheid staat centraal in onze onwankelbare toewijding aan uitmuntendheid.'
+}
+
+const board = {
+    title: "Bord",
+    description: "Ons visionaire bord begeleidt onze groei en bepaalt de richting van ons bedrijf"
+}
+
+const team = {
+    title: 'Team',
+    description: 'Ons deskundige team combineert creativiteit en technische vaardigheid voor uitzonderlijke weboplossingen'
+}
+
+// About Us Page How This All Started
+
+const founded = {
+    title: 'Gesticht',
+    description: 'Opgericht met een visie op digitale uitmuntendheid, zijn we aan onze reis begonnen om bedrijven te versterken met uitzonderlijke weboplossingen.'
+}
+
+const impact = {
+    title: 'Impact',
+    description: 'In onze zoektocht naar uitmuntendheid streven we ernaar de webdesignindustrie te revolutioneren, nieuwe normen te stellen en visueel verbluffende online ervaringen te creëren.'
+}
+
+const clients = {
+    title: 'Klanten',
+    description: 'Verheugd om te werken met aankomende klanten, hen helpen hun digitale potentieel te ontgrendelen en succes te behalen in de online wereld.'
+}
+
 // Home Header
-const home = {
+const homeHeader = {
     title: 'Sodecx - Thuis',
+    description: 'Sodecx: Online succes bevorderen met aangepaste weboplossingen. We zijn gespecialiseerd in webontwikkeling, webshops en hostingdiensten om bedrijven te helpen gedijen in het digitale landschap.'
+}
+
+// About Header
+const aboutHeader = {
+    title: 'Sodecx - Over ons',
     description: 'Sodecx: Online succes bevorderen met aangepaste weboplossingen. We zijn gespecialiseerd in webontwikkeling, webshops en hostingdiensten om bedrijven te helpen gedijen in het digitale landschap.'
 }
 
@@ -85,13 +142,39 @@ const homeContent = {
     }
 }
 
+// About Content
+const aboutContent = {
+    title: 'Waarom wij',
+    whyUs: {
+        creativeIdeas: creativeIdeas,
+        onTimeDelivery: onTimeDelivery,
+        connectivity: connectivity
+    },
+    whatDoWeDo: {
+        title: 'Wat doen wij?',
+        description: 'We erkennen de cruciale rol van website lay-out en backend ontwikkeling. Ons team benadrukt boeiende webontwerpen die gebruikers betrekken en hun ervaring verbeteren. Daarnaast geven we prioriteit aan het bouwen van robuuste backends voor naadloze functionaliteit en efficiënt beheer. Met onze expertise in zowel frontend als backend ontwikkeling, leveren we uitgebreide weboplossingen die verbluffende esthetiek combineren met betrouwbare prestaties. Vertrouw op ons om uw website te optimaliseren, en zorg voor een uitzonderlijke online aanwezigheid van boeiende lay-outs tot krachtige backends.',
+        quality: quality,
+        board: board,
+        team: team
+    },
+    allStarted: {
+        title: 'Hoe is dit allemaal begonnen?',
+        founded: founded,
+        impact: impact,
+        clients: clients
+    }
+}
+
 export default {
     // Navbar
     navbar: navbar,
     // HTML HEAD FOR SEO
     head: {
-        home: home
+        home: homeHeader,
+        about : aboutHeader
     },
     // Page content
-    home: homeContent
+    home: homeContent,
+    about: aboutContent
+
 } as const

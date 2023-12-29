@@ -1,11 +1,10 @@
-import { getI18n, getScopedI18n } from '@/locales/server'
-import HomeView from '@/components/sections/home/HomeView'
-import Head from 'next/head'
+import { getScopedI18n } from '@/locales/server'
 import { Metadata } from 'next/types'
+import AboutView from '@/components/sections/about/AboutView'
 
 export async function generateMetadata() {
 
-    const t = await getScopedI18n('head.home')
+    const t = await getScopedI18n('head.about')
 
     return {
         title: t('title'),
@@ -15,5 +14,5 @@ export async function generateMetadata() {
 }
 
 export default async function Home() {
-    return <HomeView />
+    return <AboutView />
 }

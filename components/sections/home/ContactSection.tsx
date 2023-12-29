@@ -17,7 +17,7 @@ const ContactSection = async () => {
                 <div className="flex flex-col gap-10  justify-center items-center">
                     <p className="text-2xl font-medium text-center ">
                         <span>{t('start')}</span>
-                        <span className="whitespace-nowrap relative p-1 mx-1.5 inline-flex items-center justify-center  overflow-hidden group rounded-md">
+                        <span className="whitespace-nowrap relative p-1 mx-1.5 inline-flex items-center justify-center  overflow-hidden group rounded-lg">
                             <span className="absolute bg-gradient w-full h-full"></span>
                             <span className="relative bg-light-primary dark:bg-dark-primary px-2 py-1 rounded-md ">
                                 {t('keyword')}

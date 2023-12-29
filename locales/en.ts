@@ -46,10 +46,66 @@ const largeECommerce = {
     }
 }
 
+// About Us Page Content
+
+const creativeIdeas = {
+    title: 'Creative Ideas',
+    description: 'Unique brand tailored projects'
+}
+
+const onTimeDelivery = {
+    title: 'On time delivery',
+    description: 'We launch your online presence right on time.'
+}
+
+const connectivity = {
+    title: 'Connectivity',
+    description: 'A well structured place to meet your clients'
+}
+
+// About Us Page What Do We Do
+
+const quality = {
+    title: 'Quality',
+    description: 'Client satisfaction is at the heart of our unwavering commitment to excellence.'
+}
+
+const board = {
+    title: "Board",
+    description: "Our visionary board guides our growth and shapes our company's direction"
+}
+
+const team = {
+    title : 'Team',
+    description: 'Our expert team blends creativity and technical skill for exceptional web solutions'
+}
+
+// About Us Page How This All Started
+
+const founded = {
+    title: 'Founded',
+    description: 'Founded with a vision for digital excellence, we embarked on our journey to empower businesses with exceptional web solutions.'
+}
+
+const impact = {
+    title: 'Impact',
+    description: 'In our pursuit of excellence, we aim to revolutionize the web design industry, setting new standards and creating visually stunning online experiences.'
+}
+
+const clients = {
+    title : 'Clients',
+    description: 'Excited to work with upcoming clients, helping them unlock their digital potential and achieve success in the online world.'
+}
 
 // Home Header
 const homeHeader = {
     title: 'Sodecx - Home',
+    description: 'Sodecx: Empowering Online Success with Custom Web Solutions. We specialize in web development, webshops, and hosting services to help businesses thrive in the digital landscape.'
+}
+
+// About Header
+const aboutHeader = {
+    title: 'Sodecx - About Us',
     description: 'Sodecx: Empowering Online Success with Custom Web Solutions. We specialize in web development, webshops, and hosting services to help businesses thrive in the digital landscape.'
 }
 
@@ -86,14 +142,39 @@ const homeContent = {
     }
 }
 
+// About Content
+const aboutContent = {
+    title : 'Why Us',
+    whyUs : {
+        creativeIdeas : creativeIdeas,
+        onTimeDelivery : onTimeDelivery,
+        connectivity : connectivity
+    },
+    whatDoWeDo : {
+        title : 'What Do We Do?',
+        description: 'We recognize the crucial role of website layout and backend development. Our team emphasizes captivating web designs that engage users and enhance their experience. Additionally, we prioritize building robust backends for seamless functionality and efficient management. With our expertise in both frontend and backend development, we deliver comprehensive web solutions that combine stunning aesthetics with reliable performance. Trust us to optimize your website, ensuring an exceptional online presence from captivating layouts to powerful backends.',
+        quality : quality,
+        board : board,
+        team : team
+    },
+    allStarted : {
+        title: 'How this all started?',
+        founded : founded,
+        impact : impact,
+        clients : clients
+    }
+}
+
 export default {
     // Navbar
     navbar: navbar,
     // HTML HEAD FOR SEO
     head: {
-        home: homeHeader
+        home: homeHeader,
+        about : aboutHeader
     },
     // Page content
-    home: homeContent
+    home: homeContent,
+    about : aboutContent
 
 } as const

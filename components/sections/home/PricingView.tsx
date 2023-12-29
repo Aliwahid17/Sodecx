@@ -47,7 +47,7 @@ const PricingView = async () => {
     ]
 
     return (
-        <section className='lg:h-[calc(100vh-82px)] flex justify-center items-center'>
+        <section className='lg:h-screen flex justify-center items-center'>
             <div className="container mx-auto px-5">
                 <PricingSection title={t('title')} description={t('description')} table={pricingTable} />
             </div>

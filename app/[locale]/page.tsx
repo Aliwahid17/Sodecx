@@ -1,6 +1,5 @@
 import { getScopedI18n } from '@/locales/server'
 import HomeView from '@/components/sections/home/HomeView'
-import Head from 'next/head'
 import { Metadata } from 'next/types'
 
 export async function generateMetadata() {
