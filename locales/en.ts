@@ -76,7 +76,7 @@ const board = {
 }
 
 const team = {
-    title : 'Team',
+    title: 'Team',
     description: 'Our expert team blends creativity and technical skill for exceptional web solutions'
 }
 
@@ -93,7 +93,7 @@ const impact = {
 }
 
 const clients = {
-    title : 'Clients',
+    title: 'Clients',
     description: 'Excited to work with upcoming clients, helping them unlock their digital potential and achieve success in the online world.'
 }
 
@@ -106,6 +106,12 @@ const homeHeader = {
 // About Header
 const aboutHeader = {
     title: 'Sodecx - About Us',
+    description: 'Sodecx: Empowering Online Success with Custom Web Solutions. We specialize in web development, webshops, and hosting services to help businesses thrive in the digital landscape.'
+}
+
+// Services Header
+const servicesHeader = {
+    title: 'Sodecx - Services',
     description: 'Sodecx: Empowering Online Success with Custom Web Solutions. We specialize in web development, webshops, and hosting services to help businesses thrive in the digital landscape.'
 }
 
@@ -136,32 +142,76 @@ const homeContent = {
             largeECommerce: largeECommerce
         }
     },
-    hosting : {
-        title : 'Hosting',
+    hosting: {
+        title: 'Hosting',
         description: 'We offer reliable and secure hosting solutions tailored to your needs. Trust us to handle your website hosting, ensuring optimal performance, uptime, and peace of mind. Focus on your business while we take care of your hosting requirements.',
     }
 }
 
 // About Content
 const aboutContent = {
-    title : 'Why Us',
-    whyUs : {
-        creativeIdeas : creativeIdeas,
-        onTimeDelivery : onTimeDelivery,
-        connectivity : connectivity
+    title: 'Why Us',
+    whyUs: {
+        creativeIdeas: creativeIdeas,
+        onTimeDelivery: onTimeDelivery,
+        connectivity: connectivity
     },
-    whatDoWeDo : {
-        title : 'What Do We Do?',
+    whatDoWeDo: {
+        title: 'What Do We Do?',
         description: 'We recognize the crucial role of website layout and backend development. Our team emphasizes captivating web designs that engage users and enhance their experience. Additionally, we prioritize building robust backends for seamless functionality and efficient management. With our expertise in both frontend and backend development, we deliver comprehensive web solutions that combine stunning aesthetics with reliable performance. Trust us to optimize your website, ensuring an exceptional online presence from captivating layouts to powerful backends.',
-        quality : quality,
-        board : board,
-        team : team
+        quality: quality,
+        board: board,
+        team: team
     },
-    allStarted : {
+    allStarted: {
         title: 'How this all started?',
-        founded : founded,
-        impact : impact,
-        clients : clients
+        founded: founded,
+        impact: impact,
+        clients: clients
+    },
+    ourMission: {
+        title: 'Our Mission',
+        faq: {
+            1: {
+                title: "Innovative Web Solutions",
+                description: "We are committed to harnessing the power of technology, innovation, and capital to unlock long-term value and drive economic growth."
+            },
+            2: {
+                title: "User Experience",
+                description: "We prioritize user experience, creating captivating web solutions that engage and delight users."
+            },
+            3 : {
+                title: 'Strong Online Presence',
+                description : 'We empower businesses with exceptional web solutions, helping them unlock their true digital potential.'
+            },
+            4 : {
+                title: 'Ideas into Reality',
+                description : 'We transform your ideas into reality, creating bespoke web solutions that reflect your unique brand identity.'
+            }
+        }
+    },
+    quotes: 'At Sodecx, our mission is clear: to unlock the digital potential of businesses. We believe in the transformative power of well-crafted websites and webshops, supported by reliable hosting solutions',
+    positon: 'Co-Founder'
+}
+
+// Services Content
+const servicesContent = {
+    title : 'Services',
+    description: "At Sodecx, we prioritize your organization's unique needs over a one-size-fits-all approach. We go beyond selling mass-market tools by personally reviewing each client's business. Our dedicated team then tailors a solution that ensures maximum adoption and success. With our specialized approach, your products and services will flourish in the digital landscape",
+    howItWorks : {
+        title : 'How it works?',
+        1 : {
+            title: 'Request a Quote',
+            description: "Share your project details with us, including your requirements, timeline, and budget. We'll provide you with a comprehensive quote tailored to your needs."
+        },
+        2 : {
+            title: 'Collaborative Development',
+            description: "Our team will work closely with you, refining the project scope, creating designs, and developing the website or webshop to meet your specifications."
+        },
+        3:{
+            title: 'Final Delivery',
+            description: "Once the development is complete, we conduct rigorous testing and ensure everything is in order. We deliver the finished product to you, ready for launch and success."
+        }
     }
 }
 
@@ -171,10 +221,12 @@ export default {
     // HTML HEAD FOR SEO
     head: {
         home: homeHeader,
-        about : aboutHeader
+        about: aboutHeader,
+        services: servicesHeader
     },
     // Page content
     home: homeContent,
-    about : aboutContent
+    about: aboutContent,
+    services: servicesContent,
 
 } as const

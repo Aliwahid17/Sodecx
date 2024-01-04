@@ -6,18 +6,18 @@
     --gradient: linear-gradient(90deg, #81FEE9 0%, #88F5EA 6.25%, #90ECEC 12.5%, #97E3ED 18.75%, #9EDAEE 25%, #A6D1F0 31.25%, #ADC8F1 37.5%, #B4BFF3 43.75%, #BBB6F4 50%, #C3ADF5 56.25%, #CAA4F7 62.5%, #D19BF8 68.75%, #D992F9 75%, #E089FB 81.25%, #E780FC 87.5%, #EF77FE 93.75%, #F66EFF 100%);
 }
 
-  .shadow-inner::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: linear-gradient(45deg, #4299E1, #ED64A6);
-      border-radius: inherit;
-      margin: -10px;
-      z-index: -1;
-  }
+.shadow-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(45deg, #4299E1, #ED64A6);
+    border-radius: inherit;
+    margin: -10px;
+    z-index: -1;
+}
 
 .socialmedia:hover {
     background: var(--gradient)
@@ -29,4 +29,19 @@
 
 .socialmedia:hover path:last-child {
     fill: #393939;
+}
+
+.expandable {
+    min-height: 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 200ms;
+}
+
+.wrapper.open {
+    grid-template-rows: 1fr;
 }

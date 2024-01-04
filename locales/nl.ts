@@ -109,6 +109,12 @@ const aboutHeader = {
     description: 'Sodecx: Online succes bevorderen met aangepaste weboplossingen. We zijn gespecialiseerd in webontwikkeling, webshops en hostingdiensten om bedrijven te helpen gedijen in het digitale landschap.'
 }
 
+// Services Header
+const servicesHeader = {
+    title: 'Sodecx - Diensten',
+    description: 'Sodecx: Online succes bevorderen met aangepaste weboplossingen. We zijn gespecialiseerd in webontwikkeling, webshops en hostingdiensten om bedrijven te helpen gedijen in het digitale landschap.'
+}
+
 // Home Content
 const homeContent = {
     solgan: 'Uw online business begint hier',
@@ -162,6 +168,50 @@ const aboutContent = {
         founded: founded,
         impact: impact,
         clients: clients
+    },
+    ourMission: {
+        title: 'Onze missie',
+        faq: {
+            1: {
+                title: "Innovatieve weboplossingen",
+                description: "We streven ernaar de kracht van technologie, innovatie en kapitaal te benutten om waarde op de lange termijn te ontsluiten en economische groei te stimuleren."
+            },
+            2: {
+                title: "Gebruikerservaring",
+                description: "We geven prioriteit aan de gebruikerservaring en creëren boeiende weboplossingen die gebruikers boeien en verrukken."
+            },
+            3: {
+                title: 'Sterke online aanwezigheid',
+                description: 'Wij bieden bedrijven uitzonderlijke weboplossingen, waarmee ze hun ware digitale potentieel kunnen ontsluiten.'
+            },
+            4: {
+                title: 'Ideeën naar realiteit',
+                description: 'Wij zetten uw ideeën om in werkelijkheid en creëren op maat gemaakte weboplossingen die uw unieke merkidentiteit weerspiegelen.'
+            }
+        }
+    },
+    quotes: 'Bij Sodecx is onze missie duidelijk: het digitale potentieel van bedrijven ontsluiten. Wij geloven in de transformerende kracht van goed gemaakte websites en webshops, ondersteund door betrouwbare hostingoplossingen',
+    positon: 'Mede-oprichter'
+}
+
+// Services Content
+const servicesContent = {
+    title: 'Diensten',
+    description: "Bij Sodecx geven we prioriteit aan de unieke behoeften van uw organisatie boven een one-size-fits-all aanpak. We gaan verder dan het verkopen van tools voor de massamarkt door de activiteiten van elke klant persoonlijk te beoordelen. Ons toegewijde team werkt vervolgens een oplossing op maat uit die maximale acceptatie en succes garandeert. Met onze gespecialiseerde aanpak komen uw producten en diensten tot bloei in het digitale landschap",
+    howItWorks: {
+        title: 'Hoe het werkt?',
+        1: {
+            title: 'Een offerte aanvragen',
+            description: "Deel uw projectgegevens met ons, inclusief uw vereisten, tijdlijn en budget. Wij bezorgen u een uitgebreide offerte afgestemd op uw wensen."
+        },
+        2: {
+            title: 'Gezamenlijke ontwikkeling',
+            description: "Ons team zal nauw met u samenwerken, de projectomvang verfijnen, ontwerpen maken en de website of webshop ontwikkelen om aan uw specificaties te voldoen."
+        },
+        3: {
+            title: 'Uiterlijke levering',
+            description: "Zodra de ontwikkeling is voltooid, voeren we strenge tests uit en zorgen we ervoor dat alles in orde is. Wij leveren het eindproduct aan u, klaar voor lancering en succes."
+        }
     }
 }
 
@@ -171,10 +221,12 @@ export default {
     // HTML HEAD FOR SEO
     head: {
         home: homeHeader,
-        about : aboutHeader
+        about : aboutHeader,
+        services: servicesHeader
     },
     // Page content
     home: homeContent,
-    about: aboutContent
+    about: aboutContent,
+    services: servicesContent
 
 } as const

@@ -10,7 +10,7 @@ const WhatWeDoImage = () => {
     const [source, setSource] = useState(LaptopDark)
 
     useLayoutEffect(() => {
-        setSource(theme === 'light' ? LaptopLight : LaptopDark)
+        setSource(theme === 'dark' ? LaptopLight : LaptopDark)
     }, [theme])
 
     return (
