@@ -5,6 +5,27 @@ const navbar = {
     services: 'Services',
 }
 
+// Footer
+const footer = {
+    follow: 'Follow us on',
+    1: {
+        title: 'USEFUL LINKS',
+        section: {
+            1: 'Home',
+            2: 'About Us',
+            3: 'Services',
+            4: 'Get a Quote',
+        }
+    },
+    2: {
+        title: "OTHER RESOURCES",
+        section: {
+            1: 'Terms of Service (Dutch)',
+            2: 'Sitemap',
+        }
+    }
+}
+
 // Bussiness Pricing Table
 const starter = {
     title: 'Starter',
@@ -180,13 +201,13 @@ const aboutContent = {
                 title: "User Experience",
                 description: "We prioritize user experience, creating captivating web solutions that engage and delight users."
             },
-            3 : {
+            3: {
                 title: 'Strong Online Presence',
-                description : 'We empower businesses with exceptional web solutions, helping them unlock their true digital potential.'
+                description: 'We empower businesses with exceptional web solutions, helping them unlock their true digital potential.'
             },
-            4 : {
+            4: {
                 title: 'Ideas into Reality',
-                description : 'We transform your ideas into reality, creating bespoke web solutions that reflect your unique brand identity.'
+                description: 'We transform your ideas into reality, creating bespoke web solutions that reflect your unique brand identity.'
             }
         }
     },
@@ -196,22 +217,65 @@ const aboutContent = {
 
 // Services Content
 const servicesContent = {
-    title : 'Services',
+    title: 'Services',
     description: "At Sodecx, we prioritize your organization's unique needs over a one-size-fits-all approach. We go beyond selling mass-market tools by personally reviewing each client's business. Our dedicated team then tailors a solution that ensures maximum adoption and success. With our specialized approach, your products and services will flourish in the digital landscape",
-    howItWorks : {
-        title : 'How it works?',
-        1 : {
+    howItWorks: {
+        title: 'How it works?',
+        1: {
             title: 'Request a Quote',
             description: "Share your project details with us, including your requirements, timeline, and budget. We'll provide you with a comprehensive quote tailored to your needs."
         },
-        2 : {
+        2: {
             title: 'Collaborative Development',
             description: "Our team will work closely with you, refining the project scope, creating designs, and developing the website or webshop to meet your specifications."
         },
-        3:{
+        3: {
             title: 'Final Delivery',
             description: "Once the development is complete, we conduct rigorous testing and ensure everything is in order. We deliver the finished product to you, ready for launch and success."
         }
+    },
+    detailSection: {
+        title: "Optimize Business Operations with Sodecx's Robust Admin Backend",
+        description: "At Sodecx, we go beyond generic solutions and understand that every business is unique. Our powerful admin backend empowers you to efficiently manage and control your website or webshop. With our expert team overseeing the development process, you can trust in the reliability and functionality of our admin backend. Gain valuable insights and effortlessly navigate your business with Sodecx's robust admin backend"
+    },
+    hostingPricingTable: {
+        title: 'Simple & Transparent Hosting',
+        description: 'Focus on your business goals and we take care of the rest. From ready-made components to perfect templates to highly customizable design. All you need to do is choose your plan according to your next project.',
+        1: {
+            title: 'Basic',
+            description: 'Hosting meeting the needs of a small website up to 3 pages',
+            price: '€9.99',
+            table: {
+                1: 'SSL encryption',
+                2: 'Weekly Backups',
+            }
+        },
+        2: {
+            title: 'Business',
+            description: 'More power for larger usecase websites up to 6 pages',
+            price: '€16.99',
+            table: {
+                1: 'SSL encryption',
+                2: 'Weekly Backups',
+                3: 'SEO Optimized',
+                4: 'Backend Integration',
+                5: 'Dedicated IP Address',
+            }
+        },
+        3: {
+            title: 'Advanced',
+            description: 'Maximum support on your online platform up to 12 pages',
+            price: '€24.99',
+            table: {
+                1: 'SSL encryption',
+                2: 'Weekly Backups',
+                3: 'SEO Optimized',
+                4: 'Backend Integration',
+                5: 'Dedicated IP Address',
+                6: 'Domain Name',
+                7: 'Customized Features'
+            }
+        },
     }
 }
 
@@ -224,6 +288,8 @@ export default {
         about: aboutHeader,
         services: servicesHeader
     },
+    // Footer
+    footer: footer,
     // Page content
     home: homeContent,
     about: aboutContent,

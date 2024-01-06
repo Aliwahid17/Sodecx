@@ -12,7 +12,7 @@ const Button = ({ title , href , toggleNav }: PropsTypes) => {
         <Link href={href} onClick={() => toggleNav!()} >
             <div className="w-40 h-10 justify-center items-center inline-flex">
                 <div className="px-8 py-2.5 bg-gradient rounded-3xl justify-center items-center gap-2.5 inline-flex">
-                    <div className="text-dark-secondary text-lg font-semibold">{title}</div>
+                    <div className="text-dark-secondary hover:text-light-primary text-lg font-semibold">{title}</div>
                 </div>
             </div>
         </Link>

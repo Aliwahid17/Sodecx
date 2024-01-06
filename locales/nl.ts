@@ -5,6 +5,27 @@ const navbar = {
     services: 'Diensten',
 }
 
+// Footer
+const footer = {
+    follow: 'Volg ons op',
+    1: {
+        title: 'HANDIGE LINKS',
+        section: {
+            1: 'Thuis',
+            2: 'Over ons',
+            3: 'Diensten',
+            4: 'Ontvang een offerte',
+        }
+    },
+    2: {
+        title: "ANDERE BRONNEN",
+        section: {
+            1: 'Servicevoorwaarden (Nederlands)',
+            2: 'Sitemap',
+        }
+    }
+}
+
 // Bussiness Pricing Table
 const starter = {
     title: 'Starter', // Translate to Dutch
@@ -212,6 +233,49 @@ const servicesContent = {
             title: 'Uiterlijke levering',
             description: "Zodra de ontwikkeling is voltooid, voeren we strenge tests uit en zorgen we ervoor dat alles in orde is. Wij leveren het eindproduct aan u, klaar voor lancering en succes."
         }
+    },
+    detailSection: {
+        title: "Optimaliseer de bedrijfsvoering met de robuuste beheerdersbackend van Sodecx",
+        description: "Bij Sodecx gaan we verder dan generieke oplossingen en begrijpen we dat elk bedrijf uniek is. Met onze krachtige admin-backend kunt u uw website of webshop efficiënt beheren en controleren. Omdat ons deskundige team toezicht houdt op het ontwikkelingsproces, kunt u vertrouwen op de betrouwbaarheid en functionaliteit van onze admin-backend. Verkrijg waardevolle inzichten en navigeer moeiteloos door uw bedrijf met de robuuste admin-backend van Sodecx"
+    },
+    hostingPricingTable: {
+        title: 'Eenvoudige en transparante hosting',
+        description: 'Concentreer u op uw bedrijfsdoelstellingen en wij zorgen voor de rest. Van kant-en-klare componenten tot perfecte sjablonen en zeer aanpasbaar ontwerp. Het enige dat u hoeft te doen, is uw plan kiezen op basis van uw volgende project.',
+        1: {
+            title: 'Basis',
+            description: "Hosting die voldoet aan de behoeften van een kleine website tot 3 pagina's",
+            price: '€9.99',
+            table: {
+                1: 'SSL-codering',
+                2: 'Wekelijkse back-ups',
+            }
+        },
+        2: {
+            title: 'Bedrijf',
+            description: "Meer kracht voor grotere usecase-websites tot 6 pagina's",
+            price: '€16.99',
+            table: {
+                1: 'SSL-codering',
+                2: 'Wekelijkse back-ups',
+                3: 'SEO-geoptimaliseerd',
+                4: 'Backend-integratie',
+                5: 'Speciaal IP-adres'
+            }
+        },
+        3: {
+            title: 'Geavanceerd',
+            description: "Maximale ondersteuning op uw online platform tot 12 pagina's",
+            price: '€16.99',
+            table: {
+                1: 'SSL-codering',
+                2: 'Wekelijkse back-ups',
+                3: 'SEO-geoptimaliseerd',
+                4: 'Backend-integratie',
+                5: 'Speciaal IP-adres',
+                6: 'Domeinnaam',
+                7: 'Aangepaste functies'
+            }
+        },
     }
 }
 
@@ -221,9 +285,11 @@ export default {
     // HTML HEAD FOR SEO
     head: {
         home: homeHeader,
-        about : aboutHeader,
+        about: aboutHeader,
         services: servicesHeader
     },
+    // Footer
+    footer: footer,
     // Page content
     home: homeContent,
     about: aboutContent,

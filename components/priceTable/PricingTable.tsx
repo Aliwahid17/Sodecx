@@ -1,6 +1,6 @@
 import { PricingTableTypes } from "./types"
 
-const PricingTable = ({ pricing }: { pricing: PricingTableTypes[] }) => {
+const PricingTable = ({ pricing, showMonth }: { pricing: PricingTableTypes[], showMonth?: boolean }) => {
     return (
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-2 xl:gap-10 justify-center items-center lg:items-stretch ">
             {pricing.map((value, key) => (
@@ -11,7 +11,7 @@ const PricingTable = ({ pricing }: { pricing: PricingTableTypes[] }) => {
                             <div className="text-3xl font-semibold">{value.title}</div>
                             <div className="flex flex-col gap-3 w-7/12 items-center ">
                                 <div className="">{value.description}</div>
-                                <div className="bg-gradient w-fit text-3xl font-semibold text-dark-secondary py-1 px-6 rounded-3xl">{value.price}</div>
+                                <div className="bg-gradient w-fit text-3xl font-semibold text-dark-secondary py-1 px-6 rounded-3xl">{value.price}{showMonth && <span className="text-xs">/month</span>}</div>
                             </div>
                         </div>
                         <div className="flex flex-col items-center gap-4">
@@ -25,8 +25,8 @@ const PricingTable = ({ pricing }: { pricing: PricingTableTypes[] }) => {
                             ))}
                         </div>
                     </div>
-                    <div className="absolute bottom-1 bg-gradient w-full h-[102px] flex justify-center items-center rounded-[40px]">
-                        <button className="border-4 border-dark-secondary py-3 px-8 rounded-[29px] font-semibold">
+                    <div className="absolute bottom-1 bg-gradient  w-full h-[102px] flex justify-center  items-center rounded-[40px]">
+                        <button className="border-4 border-dark-secondary hover:bg-dark-primary hover:text-light-primary  py-3 px-8 rounded-[29px] font-semibold">
                             Explore
                         </button>
                     </div>

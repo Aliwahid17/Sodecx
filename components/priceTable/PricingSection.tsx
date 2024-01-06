@@ -5,9 +5,10 @@ type PropsTypes = {
   title: string
   description: string
   table: PricingTableTypes[]
+  showMonth?: boolean
 }
 
-const PricingSection = ({ title, description, table }: PropsTypes) => {
+const PricingSection = ({ title, description, table, showMonth }: PropsTypes) => {
   return (
     <div className="flex flex-col gap-10 justify-center items-center">
       <div className="text-center flex gap-4 flex-col">
@@ -16,7 +17,7 @@ const PricingSection = ({ title, description, table }: PropsTypes) => {
         </h2>
         <span>{description}</span>
       </div>
-      <PricingTable pricing={table} />
+      <PricingTable pricing={table} showMonth={showMonth} />
     </div>
   )
 }

@@ -1,3 +1,6 @@
+import PricingView from "../home/PricingView"
+import DetailSection from "./DetailSection"
+import HostingPricingView from "./HostingPricingView"
 import HowItWorkSection from "./HowItWorkSection"
 import ServicesSection from "./ServicesSection"
 
@@ -6,6 +9,9 @@ const ServicesView = async () => {
         <main>
             <ServicesSection />
             <HowItWorkSection />
+            <DetailSection />
+            <PricingView />
+            <HostingPricingView />
         </main>
     )
 }

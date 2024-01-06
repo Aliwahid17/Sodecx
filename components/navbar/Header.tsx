@@ -83,7 +83,7 @@ const Header = () => {
 
   const miniNavMenu = (
     <div className={`${openNav ? 'block relative opacity-100 ' : ' opacity-0 hidden '} delay-75 transition-opacity duration-500 lg:hidden p-3 pt-5 min-h-screen z-50`}>
-      <div className="flex flex-col justify-center items-center gap-5 md:gap-10 font-medium text-xl">
+      <nav className="flex flex-col justify-center items-center gap-5 md:gap-10 font-medium text-xl">
         <Link href={paths.home} onClick={() => toggleNav()} >{currentLocale === 'en' ? 'Home' : 'Thuis'}</Link>
         <Link href={paths.about} onClick={() => toggleNav()} >{currentLocale === 'en' ? 'About Us' : 'Over ons'}</Link>
         <Link href={paths.services} onClick={() => toggleNav()} >{currentLocale === 'en' ? 'Services' : 'Diensten'}</Link>
@@ -92,7 +92,7 @@ const Header = () => {
           <button onClick={() => { setTheme(theme === 'light' ? "dark" : 'light'), toggleNav() }} ><Image src={modeSrc} alt="Light And Dark Mood Icons" width={20} height={21} /></button>
           <button onClick={() => { changeLocale(currentLocale === 'en' ? "nl" : 'en'), toggleNav() }}><Image src={currentLocale === 'en' ? '../assets/icons/nl.svg' : '../assets/icons/en.svg'} alt="English And Dutch Flags" width={25} height={18} /></button>
         </div>
-      </div>
+      </nav>
     </div>
   )
 
@@ -100,9 +100,9 @@ const Header = () => {
 
   return (
     <header className={`w-full m-0 sticky top-0 z-50 ${openNav ? "dark:bg-dark-primary bg-light-primary" : "backdrop-blur dark:bg-dark-primary/40 bg-light-primary/40 "} `}>
-      <nav>
+      <div>
         <div className="container mx-auto px-4 lg:px-16 xl:px-24">
-          <div className="flex items-center justify-between py-4">
+          <nav className="flex items-center justify-between py-4">
 
             <div className="flex justify-center items-center gap-12" >
               <Link href={paths.home} className="lg:flex justify-center items-center gap-5">
@@ -123,9 +123,9 @@ const Header = () => {
 
             <div className="hidden lg:flex items-center justify-between w-2/3">
               <div className={`flex items-center justify-between  w-1/2 ${isVisible && 'text-dark-primary'} `}>
-                <Link href={paths.home} className="relative" >{currentLocale === 'en' ? 'Home' : 'Thuis'}<span className={` ${currentPathName !== paths.home ? "hidden" : ""} absolute -bottom-1 left-1/2 w-1 h-1  ${isVisible || "dark:bg-light-primary"} bg-dark-primary rounded-full `} /></Link>
-                <Link href={paths.about} className="relative" >{currentLocale === 'en' ? 'About Us' : 'Over ons'}<span className={` ${currentPathName !== paths.about ? "hidden" : ""} absolute -bottom-1 left-1/2 w-1 h-1  ${isVisible || "dark:bg-light-primary"} bg-dark-primary rounded-full `} /></Link>
-                <Link href={paths.services} className="relative" >{currentLocale === 'en' ? 'Services' : 'Diensten'}<span className={` ${currentPathName !== paths.services ? "hidden" : ""} absolute -bottom-1 left-1/2 w-1 h-1  ${isVisible || "dark:bg-light-primary"} bg-dark-primary rounded-full `} /></Link>
+                <Link href={paths.home} className={`relative ${isVisible ? "hover:text-light-primary" : "gradientText"}`} >{currentLocale === 'en' ? 'Home' : 'Thuis'}<span className={` ${currentPathName !== paths.home ? "hidden" : ""} absolute -bottom-1 left-1/2 w-1 h-1  ${isVisible || "dark:bg-light-primary"} bg-dark-primary rounded-full`} /></Link>
+                <Link href={paths.about} className={`relative ${isVisible ? "hover:text-light-primary" : "gradientText"}`} >{currentLocale === 'en' ? 'About Us' : 'Over ons'}<span className={` ${currentPathName !== paths.about ? "hidden" : ""} absolute -bottom-1 left-1/2 w-1 h-1  ${isVisible || "dark:bg-light-primary"} bg-dark-primary rounded-full`} /></Link>
+                <Link href={paths.services} className={`relative ${isVisible ? "hover:text-light-primary" : "gradientText"}`} >{currentLocale === 'en' ? 'Services' : 'Diensten'}<span className={` ${currentPathName !== paths.services ? "hidden" : ""} absolute -bottom-1 left-1/2 w-1 h-1  ${isVisible || "dark:bg-light-primary"} bg-dark-primary rounded-full`} /></Link>
               </div>
               <div className="flex justify-center items-center gap-2" >
                 <Button title={currentLocale === 'en' ? "Contact Us" : 'Contact'} href={paths.contact} toggleNav={toggleNav} />
@@ -136,12 +136,12 @@ const Header = () => {
               </div>
             </div>
 
-          </div>
+          </nav>
         </div>
 
         {miniNavMenu}
 
-      </nav>
+      </div>
     </header >
   )
 }

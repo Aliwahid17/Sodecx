@@ -3,6 +3,9 @@ export const paths = {
     about : '/about',
     services : '/services',
     contact : '/contact',
+    quote : '/quote',
+    terms : '/terms.pdf',
+    sitemap : '/sitemap.xml',
 }
 
 export const socialMedia = {
