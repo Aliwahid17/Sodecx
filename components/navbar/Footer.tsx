@@ -22,10 +22,6 @@ const Footer = async () => {
       name: t('1.section.3'),
       link: paths.services
     },
-    {
-      name: t('1.section.4'),
-      link: paths.quote
-    },
   ]
 
   const otherResourcesLink = [

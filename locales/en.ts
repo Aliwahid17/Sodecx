@@ -14,7 +14,6 @@ const footer = {
             1: 'Home',
             2: 'About Us',
             3: 'Services',
-            4: 'Get a Quote',
         }
     },
     2: {

@@ -7,8 +7,6 @@ import { SettingsProvider } from '@context'
 
 const urbanist = Urbanist({ subsets: ['latin'] })
 
-export const metadata: Metadata = {}
-
 export default async function RootLayout({
   children,
 }: {

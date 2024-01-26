@@ -14,7 +14,6 @@ const footer = {
             1: 'Thuis',
             2: 'Over ons',
             3: 'Diensten',
-            4: 'Ontvang een offerte',
         }
     },
     2: {
