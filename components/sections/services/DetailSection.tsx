@@ -1,6 +1,7 @@
-import { Button } from "@/components/button"
+import { Button } from "@/components/contact"
 import { paths } from "@/config"
 import { getCurrentLocale, getScopedI18n } from "@/locales/server"
+import { contactForm } from "@/server/contactForm"
 
 const DetailSection = async () => {
 
@@ -14,7 +15,7 @@ const DetailSection = async () => {
                     <h2 className="textColor lg:w-2/5">{t('title')}</h2>
                     <div className="flex flex-col justify-center items-center gap-5 lg:w-3/5">
                         <p>{t('description')}</p>
-                        <Button title={currentLocale === 'en' ? "Contact Us" : 'Contact'} href={paths.contact} />
+                        <Button serverActions={contactForm} title={currentLocale === 'en' ? "Contact Us" : 'Contact'} />
                     </div>
                 </div>
             </div>

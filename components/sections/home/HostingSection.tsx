@@ -1,8 +1,9 @@
 import Image from "next/image"
 import { getCurrentLocale, getScopedI18n } from "@/locales/server"
 import HostingImage from "./HostingImage"
-import { Button } from "@/components/button"
+import { Button } from "@/components/contact"
 import { paths } from "@/config"
+import { contactForm } from "@/server/contactForm"
 
 const HostingSection = async () => {
 
@@ -39,7 +40,7 @@ const HostingSection = async () => {
                         </div>
                         <p>{t('description')}</p>
                         <div className="flex justify-between items-center " >
-                            <Button title={currentLocale === 'en' ? "Contact Us" : 'Contact'} href={paths.contact} />
+                            <Button serverActions={contactForm} title={currentLocale === 'en' ? "Contact Us" : 'Contact'}  />
                             <svg xmlns="http://www.w3.org/2000/svg" width="56" height="14" viewBox="0 0 56 14" fill="none">
                                 <path d="M11.3582 0.0976562V13.0977L0.478516 6.64294L11.3582 0.0976562Z" fill="#81FDE9" />
                                 <path d="M25.9498 0.0976562V13.0977L15.0781 6.64294L25.9498 0.0976562Z" fill="#F174FE" />

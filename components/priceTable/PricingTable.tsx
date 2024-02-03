@@ -1,4 +1,5 @@
 import { PricingTableTypes } from "./types"
+import QuoteBtn from "@components/contact/QuoteBtn"
 
 const PricingTable = ({ pricing, showMonth }: { pricing: PricingTableTypes[], showMonth?: boolean }) => {
     return (
@@ -26,9 +27,7 @@ const PricingTable = ({ pricing, showMonth }: { pricing: PricingTableTypes[], sh
                         </div>
                     </div>
                     <div className="absolute bottom-1 bg-gradient  w-full h-[102px] flex justify-center  items-center rounded-[40px]">
-                        <button className="border-4 border-dark-secondary hover:bg-dark-primary hover:text-light-primary  py-3 px-8 rounded-[29px] font-semibold">
-                            Explore
-                        </button>
+                        <QuoteBtn pricing={value} />
                     </div>
                 </div>
             ))}

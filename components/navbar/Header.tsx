@@ -6,10 +6,10 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { Button } from "@components/button";
+import { Button } from "@/components/contact";
 import { usePathname } from "next/navigation";
 
-const Header = () => {
+const Header = ({ serverActions }: { serverActions: (formData: FormData) => Promise<string> }) => {
 
   const currentLocale = useCurrentLocale();
   const changeLocale = useChangeLocale({ preserveSearchParams: true });
@@ -87,7 +87,7 @@ const Header = () => {
         <Link href={paths.home} onClick={() => toggleNav()} >{currentLocale === 'en' ? 'Home' : 'Thuis'}</Link>
         <Link href={paths.about} onClick={() => toggleNav()} >{currentLocale === 'en' ? 'About Us' : 'Over ons'}</Link>
         <Link href={paths.services} onClick={() => toggleNav()} >{currentLocale === 'en' ? 'Services' : 'Diensten'}</Link>
-        <Button title={currentLocale === 'en' ? "Contact Us" : 'Contact'} href={paths.contact} toggleNav={() => toggleNav()} />
+        <Button serverActions={serverActions} title={currentLocale === 'en' ? "Contact Us" : 'Contact'} />
         <div className="flex gap-6 justify-center items-center ">
           <button onClick={() => { setTheme(theme === 'light' ? "dark" : 'light'), toggleNav() }} ><Image src={modeSrc} alt="Light And Dark Mood Icons" width={20} height={21} /></button>
           <button onClick={() => { changeLocale(currentLocale === 'en' ? "nl" : 'en'), toggleNav() }}><Image src={currentLocale === 'en' ? '../assets/icons/nl.svg' : '../assets/icons/en.svg'} alt="English And Dutch Flags" width={25} height={18} /></button>
@@ -128,7 +128,7 @@ const Header = () => {
                 <Link href={paths.services} className={`relative ${isVisible ? "hover:text-light-primary" : "gradientText"}`} >{currentLocale === 'en' ? 'Services' : 'Diensten'}<span className={` ${currentPathName !== paths.services ? "hidden" : ""} absolute -bottom-1 left-1/2 w-1 h-1  ${isVisible || "dark:bg-light-primary"} bg-dark-primary rounded-full`} /></Link>
               </div>
               <div className="flex justify-center items-center gap-2" >
-                <Button title={currentLocale === 'en' ? "Contact Us" : 'Contact'} href={paths.contact} toggleNav={toggleNav} />
+                <Button serverActions={serverActions} title={currentLocale === 'en' ? "Contact Us" : 'Contact'} />
                 <div className="flex justify-center items-center gap-3" >
                   <button onClick={() => { setTheme(theme === 'light' ? "dark" : 'light'), toggleNav(false) }} ><Image src={modeSrc} alt="Light And Dark Mood Icons" width={20} height={21} /></button>
                   <button onClick={() => { changeLocale(currentLocale === 'en' ? "nl" : 'en'), toggleNav(false) }}><Image src={currentLocale === 'en' ? '../assets/icons/nl.svg' : '../assets/icons/en.svg'} alt="English And Dutch Flags" width={25} height={18} /></button>

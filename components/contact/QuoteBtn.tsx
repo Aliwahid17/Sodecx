@@ -1,8 +1,10 @@
-'use client'
-import Link from "next/link"
+"use client"
+
+import { PricingTableTypes } from "@/components/priceTable/types"
+import { useCurrentLocale } from "@/locales/client"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import * as z from "zod"
+import { z } from "zod"
 import { Button as DialogBtn } from "@/components/ui/button"
 import {
     Dialog,
@@ -12,29 +14,34 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-    DialogClose
 } from "@/components/ui/dialog"
+import Link from "next/link"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
     FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { useCurrentLocale } from "@/locales/client"
+import { useToast } from "@/components/ui/use-toast"
 import { Textarea } from "@/components/ui/textarea"
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 
 type PropsTypes = {
-    title: string
-    href: string
-    toggleNav?: (status?: boolean) => void
+    pricing: PricingTableTypes
 }
 
-const Button = ({ title, href, toggleNav }: PropsTypes) => {
+const QuoteBtn = ({ pricing }: PropsTypes) => {
 
     const currentLocale = useCurrentLocale();
 
@@ -58,39 +65,38 @@ const Button = ({ title, href, toggleNav }: PropsTypes) => {
         },
     ]
 
+
+
     const formSchema = z.object({
         name: z.string().min(5, { message: currentLocale === 'en' ? "Name is required" : "Naam is vereist" }),
         email: z.string().email({ message: currentLocale === 'en' ? "Email Address is required" : "E-mailadres is vereist" }),
-        phoneNumber: z.string().regex(/^[0-9]{10}$/, { message: currentLocale === 'en' ? "Phone number is required" : "Telefoonnummer is vereist" }),
-        message: z.string().min(30, { message: currentLocale === 'en' ? "Message is required" : "Bericht is vereist" })
+        businessName: z.string().min(5, { message: currentLocale === 'en' ? "Business Name is required" : "Bedrijfsnaam is vereist" }),
+        phoneNumber: z.string().regex(/^[0-9]{5,12}$/, { message: currentLocale === 'en' ? "Phone number is required" : "Telefoonnummer is vereist" }),
+        message: z.string().min(30, { message: currentLocale === 'en' ? "Message is required" : "Bericht is vereist" }),
+        quote: z.enum(["quote", "contact"])
     })
 
-    // 1. Define your form.
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             name: "",
             email: "",
+            businessName: "",
             phoneNumber: "",
-            message: ""
+            message: "",
+            quote: "quote"
         },
     })
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
+    async function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values)
     }
-
-
 
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <div className="w-40 h-10 justify-center items-center inline-flex">
-                    <div className="px-8 py-2.5 bg-gradient rounded-3xl justify-center items-center gap-2.5 inline-flex">
-                        <div className="text-dark-secondary hover:text-light-primary text-lg font-semibold">{title}</div>
-                    </div>
+                <div className="border-4 border-dark-secondary hover:bg-dark-primary hover:text-light-primary  py-3 px-8 rounded-[29px] font-semibold">
+                    Explore
                 </div>
             </DialogTrigger>
 
@@ -112,6 +118,7 @@ const Button = ({ title, href, toggleNav }: PropsTypes) => {
 
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+
                         <FormField
                             control={form.control}
                             name="name"
@@ -130,7 +137,7 @@ const Button = ({ title, href, toggleNav }: PropsTypes) => {
                             name="email"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>{currentLocale === 'en' ? 'Email' : 'E-mail'}</FormLabel>
                                     <FormControl>
                                         <Input placeholder="sodecx@gmail.com" {...field} />
                                     </FormControl>
@@ -138,6 +145,51 @@ const Button = ({ title, href, toggleNav }: PropsTypes) => {
                                 </FormItem>
                             )}
                         />
+
+                        <div className="sm:flex items-center justify-center gap-3 w-full">
+
+
+
+                            <FormField
+                                control={form.control}
+                                name="businessName"
+                                render={({ field }) => (
+                                    <FormItem className="w-3/5">
+                                        <FormLabel>{currentLocale === 'en' ? "Business Name" : "Bedrijfsnaam"}</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Sodecx" {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+
+                            <FormField
+                                control={form.control}
+                                name="phoneNumber"
+                                render={({ field }) => (
+                                    <FormItem className="w-2/5">
+                                        <FormLabel>{currentLocale === 'en' ? "Service Pack" : "Servicepakket"}</FormLabel>
+                                        <Select onValueChange={field.onChange} defaultValue={"m@example.com"}>
+                                            <FormControl>
+                                                <SelectTrigger>
+                                                    <SelectValue placeholder="Select a verified email to display" />
+                                                </SelectTrigger>
+                                            </FormControl>
+                                            <SelectContent>
+                                                <SelectItem value="m@example.com">m@example.com</SelectItem>
+                                                <SelectItem value="m@google.com">m@google.com</SelectItem>
+                                                <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+
+
+                        </div>
+
                         <FormField
                             control={form.control}
                             name="phoneNumber"
@@ -151,6 +203,8 @@ const Button = ({ title, href, toggleNav }: PropsTypes) => {
                                 </FormItem>
                             )}
                         />
+
+
 
                         <FormField
                             control={form.control}
@@ -177,9 +231,8 @@ const Button = ({ title, href, toggleNav }: PropsTypes) => {
                     </form>
                 </Form>
             </DialogContent>
-
         </Dialog>
     )
 }
 
-export default Button
+export default QuoteBtn

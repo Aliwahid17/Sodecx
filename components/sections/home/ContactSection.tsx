@@ -1,7 +1,8 @@
-import { Button } from "@/components/button"
+import { Button } from "@/components/contact"
 import { paths } from "@/config"
 import { getCurrentLocale, getScopedI18n } from "@/locales/server"
 import Image from "next/image"
+import { contactForm } from "@/server/contactForm"
 
 const ContactSection = async () => {
 
@@ -25,7 +26,7 @@ const ContactSection = async () => {
                         </span>
                         <span>{t('end')}</span>
                     </p>
-                    <Button title={currentLocale === 'en' ? "Contact Us" : 'Contact'} href={paths.contact} />
+                    <Button serverActions={contactForm}  title={currentLocale === 'en' ? "Contact Us" : 'Contact'} />
                 </div>
 
                 <Image src='/assets/icons/home/Rectangle.svg' className="hidden xl:block  h-[calc(100vh-100px)] absolute top-0 right-0 rotate-180" alt='Rectangle' width={338} height={517} />
