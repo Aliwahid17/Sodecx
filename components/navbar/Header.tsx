@@ -105,7 +105,7 @@ const Header = ({ serverActions }: { serverActions: (formData: FormData) => Prom
           <nav className="flex items-center justify-between py-4">
 
             <div className="flex justify-center items-center gap-12" >
-              <Link href={paths.home} className="lg:flex justify-center items-center gap-5">
+              <Link href={paths.home} aria-label="Visit Homepage" className="lg:flex justify-center items-center gap-5">
 
                 <svg width="26" height="50" viewBox="0 0 26 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M23.063 48.219C20.6811 50.5937 16.8192 50.5937 14.4373 48.219L1.78643 35.6063C-0.595474 33.2316 -0.595477 29.3814 1.78642 27.0067C2.51337 26.2819 3.37815 25.7784 4.29665 25.496L2.07399 23.2801C-0.4667 20.7471 -0.466704 16.6402 2.07399 14.1072C2.91204 13.2717 3.92183 12.7118 4.99008 12.4274L2.93704 10.3806C0.555138 8.0059 0.555137 4.15574 2.93704 1.78103C5.31894 -0.593676 9.18076 -0.593677 11.5627 1.78103L24.2136 14.3937C26.5955 16.7684 26.5955 20.6186 24.2136 22.9933C23.4865 23.7181 22.6216 24.2217 21.703 24.5041L23.9256 26.7199C26.4663 29.2529 26.4663 33.3598 23.9256 35.8928C23.0876 36.7282 22.0779 37.2881 21.0098 37.5725L23.063 39.6194C25.4449 41.9941 25.4449 45.8443 23.063 48.219Z" className=' fill-dark-primary dark:fill-light-primary' />

@@ -5,8 +5,16 @@ import { Footer, Header } from '@/components/navbar'
 import { SettingsProvider } from '@context'
 import { contactForm } from '@/server/contactForm'
 import { Toaster } from "@/components/ui/toaster"
+import type { Metadata } from 'next'
+import Favicon from '../favicon.webp'
 
 const urbanist = Urbanist({ subsets: ['latin'] })
+
+export const metadata: Metadata = {
+  icons: {
+    icon: Favicon.src,
+  },
+}
 
 export default async function RootLayout({
   children,

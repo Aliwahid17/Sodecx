@@ -12,8 +12,8 @@ type PropsTypes = {
 const FooterSection = async ({ title, section }: PropsTypes) => {
     return (
         <div className="text-light-primary">
-            <h3 className="font-bold pb-2">{title}</h3>
-            <div className="flex justify-center flex-col gap-1">
+            <h2 className="font-bold pb-2">{title}</h2>
+            <div className="flex justify-center flex-col gap-2">
                 {section.map((value, key) => (
                     <Link href={value.link} className="gradientText" target={value.target} key={key}>{value.name}</Link>
                 ))}

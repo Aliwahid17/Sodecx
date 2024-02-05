@@ -30,21 +30,21 @@ import { Textarea } from "@/components/ui/textarea"
 import {
     Select,
     SelectContent,
-    SelectGroup,
     SelectItem,
-    SelectLabel,
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
 
 type PropsTypes = {
-    pricing: PricingTableTypes
+    pricing: PricingTableTypes['title']
+    table: PricingTableTypes[]
+    serverActions: (formData: FormData) => Promise<string>
 }
 
-const QuoteBtn = ({ pricing }: PropsTypes) => {
+const QuoteBtn = ({ pricing, table , serverActions }: PropsTypes) => {
 
     const currentLocale = useCurrentLocale();
-
+    const { toast } = useToast()
     const contactTitle = currentLocale === 'en' ? 'Get in touch' : 'Neem contact op'
     const contactDesc = currentLocale === 'en' ? "Got a question about us? Are you interested in partnering with us? Have some ideas and want to know what we can do for you? Just contact us. We are here to assist you." : "Heeft u een vraag over ons? Bent u geïnteresseerd om met ons samen te werken? Heeft u ideeën en wilt u weten wat wij voor u kunnen betekenen? Neem gewoon contact met ons op. Wij zijn hier om u te helpen."
 
@@ -65,15 +65,13 @@ const QuoteBtn = ({ pricing }: PropsTypes) => {
         },
     ]
 
-
-
     const formSchema = z.object({
         name: z.string().min(5, { message: currentLocale === 'en' ? "Name is required" : "Naam is vereist" }),
         email: z.string().email({ message: currentLocale === 'en' ? "Email Address is required" : "E-mailadres is vereist" }),
         businessName: z.string().min(5, { message: currentLocale === 'en' ? "Business Name is required" : "Bedrijfsnaam is vereist" }),
         phoneNumber: z.string().regex(/^[0-9]{5,12}$/, { message: currentLocale === 'en' ? "Phone number is required" : "Telefoonnummer is vereist" }),
         message: z.string().min(30, { message: currentLocale === 'en' ? "Message is required" : "Bericht is vereist" }),
-        quote: z.enum(["quote", "contact"])
+        quote: z.string().min(1, { message: currentLocale === 'en' ? "Service Pack is required" : "Servicepakket is vereist" })
     })
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -84,20 +82,42 @@ const QuoteBtn = ({ pricing }: PropsTypes) => {
             businessName: "",
             phoneNumber: "",
             message: "",
-            quote: "quote"
+            quote: pricing
         },
     })
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values)
+        try {
+            const formData = new FormData()
+            for (const key in values) {
+                formData.append(key, values[key as keyof typeof values])
+            }
+
+            const res = await serverActions(formData)
+            if (res === 'Success') {
+                toast({
+                    title: currentLocale === 'en' ? "Message Sent" : "Bericht Verzonden",
+                    description: currentLocale === 'en' ? "Your message has been sent successfully" : "Uw bericht is succesvol verzonden",
+                    variant: "default"
+                })
+            }
+            form.reset()
+
+        } catch (error) {
+            toast({
+                title: currentLocale === 'en' ? "Error" : "Fout",
+                description: currentLocale === 'en' ? "An error occurred while sending your message" : "Er is een fout opgetreden bij het verzenden van uw bericht",
+                variant: "destructive",
+            })
+        }
     }
 
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <div className="border-4 border-dark-secondary hover:bg-dark-primary hover:text-light-primary  py-3 px-8 rounded-[29px] font-semibold">
-                    Explore
-                </div>
+                <button className="border-4 border-dark-secondary hover:bg-dark-primary hover:text-light-primary  py-3 px-8 rounded-[29px] font-semibold">
+                    {currentLocale === 'en' ? "Explore" : "Ontdekken"}
+                </button>
             </DialogTrigger>
 
             <DialogContent className="sm:max-w-xl ">
@@ -166,20 +186,21 @@ const QuoteBtn = ({ pricing }: PropsTypes) => {
 
                             <FormField
                                 control={form.control}
-                                name="phoneNumber"
+                                name="quote"
                                 render={({ field }) => (
                                     <FormItem className="w-2/5">
                                         <FormLabel>{currentLocale === 'en' ? "Service Pack" : "Servicepakket"}</FormLabel>
-                                        <Select onValueChange={field.onChange} defaultValue={"m@example.com"}>
+                                        <Select onValueChange={field.onChange} defaultValue={pricing}>
                                             <FormControl>
                                                 <SelectTrigger>
                                                     <SelectValue placeholder="Select a verified email to display" />
                                                 </SelectTrigger>
                                             </FormControl>
                                             <SelectContent>
-                                                <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                                <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                                <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                                {table.map((item, index) => (
+                                                    <SelectItem key={index} value={item.title}>{item.title}</SelectItem>
+                                                ))}
+                                                <SelectItem value={currentLocale === 'en' ? "Custom" : "Aangepast"}>{currentLocale === 'en' ? "Custom" : "Aangepast"}</SelectItem>
                                             </SelectContent>
                                         </Select>
                                         <FormMessage />

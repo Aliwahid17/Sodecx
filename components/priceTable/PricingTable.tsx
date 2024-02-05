@@ -1,7 +1,9 @@
 import { PricingTableTypes } from "./types"
 import QuoteBtn from "@components/contact/QuoteBtn"
+import { quoteForm } from "@/server/contactForm"
 
 const PricingTable = ({ pricing, showMonth }: { pricing: PricingTableTypes[], showMonth?: boolean }) => {
+
     return (
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-2 xl:gap-10 justify-center items-center lg:items-stretch ">
             {pricing.map((value, key) => (
@@ -27,7 +29,7 @@ const PricingTable = ({ pricing, showMonth }: { pricing: PricingTableTypes[], sh
                         </div>
                     </div>
                     <div className="absolute bottom-1 bg-gradient  w-full h-[102px] flex justify-center  items-center rounded-[40px]">
-                        <QuoteBtn pricing={value} />
+                        <QuoteBtn pricing={value.title} table={pricing} serverActions={quoteForm} />
                     </div>
                 </div>
             ))}

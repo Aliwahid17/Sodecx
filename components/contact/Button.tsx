@@ -93,7 +93,6 @@ const Button = ({ title, serverActions }: PropsTypes) => {
             form.reset()
 
         } catch (error) {
-            console.log(error)
             toast({
                 title: currentLocale === 'en' ? "Error" : "Fout",
                 description: currentLocale === 'en' ? "An error occurred while sending your message" : "Er is een fout opgetreden bij het verzenden van uw bericht",
@@ -105,11 +104,11 @@ const Button = ({ title, serverActions }: PropsTypes) => {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <div className="w-40 h-10 justify-center items-center inline-flex">
+                <button aria-roledescription="Contact Button" className="w-40 h-10 justify-center items-center inline-flex">
                     <div className="px-8 py-2.5 bg-gradient rounded-3xl justify-center items-center gap-2.5 inline-flex">
                         <div className="text-dark-secondary hover:text-light-primary text-lg font-semibold">{title}</div>
                     </div>
-                </div>
+                </button>
             </DialogTrigger>
 
             <DialogContent className="sm:max-w-xl ">
