@@ -107,20 +107,20 @@ const WhatWeDo = async () => {
         <section className='lg:h-[calc(100vh-82px)] flex justify-center items-center '>
             <div className="container px-5 mx-auto xl:px-24 flex flex-col gap-7 ">
                 <div className="flex flex-col lg:flex-row-reverse items-center justify-around gap-5 ">
-                    <div className="flex w-full justify-around ">
+                    <div className="flex w-full justify-around animation animate">
                         <WhatWeDoImage />
                     </div>
                     <div className="flex flex-col w-full gap-5 lg:gap-9 " >
                         <div className="text-5xl font-semibold flex w-full justify-between " >
-                            {t('title')}
-                            <Image className="hidden sm:block" src={'../../assets/decors/Vector.svg'} alt="Vector Line" width={110} height={18} />
+                            <span className="animation animate">{t('title')}</span>
+                            <Image className="hidden sm:block animation animate" src={'../../assets/decors/Vector.svg'}  alt="Vector Line" width={110} height={18} />
                         </div>
-                        <p>{t('description')}</p>
+                        <p className="animation animate">{t('description')}</p>
                     </div>
                 </div>
                 <div className="flex flex-col lg:flex-row gap-5 lg:gap-2 justify-center items-center lg:items-stretch " >
                     {whatDoWeDoCards.map((item, index) => (
-                        <div key={index} className="relative p-1.5 mx-1.5 inline-flex items-center w-full sm:w-3/4  justify-center overflow-hidden group rounded-[46px]">
+                        <div key={index} className="relative p-1.5 mx-1.5 inline-flex items-center w-full sm:w-3/4  justify-center overflow-hidden group rounded-[46px] animation animate">
                             <div className="absolute bg-gradient w-full h-full"></div>
                             <div className="relative bg-light-primary dark:bg-dark-primary px-3 py-5 w-full h-full gap-5 rounded-[40px] flex items-center ">
                                 <div>

@@ -6,7 +6,7 @@ import ServicesSection from "./ServicesSection"
 
 const ServicesView = async () => {
     return (
-        <main>
+        <main className="overflow-x-hidden">
             <ServicesSection />
             <HowItWorkSection />
             <DetailSection />

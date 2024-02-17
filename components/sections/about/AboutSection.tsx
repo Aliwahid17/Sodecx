@@ -96,7 +96,7 @@ const AboutSection = async () => {
     return (
         <section className="h-screen lg:h-[calc(100vh-82px)] flex flex-col gap-2 justify-center items-center relative ">
             <HeroDecor />
-            <h1 className="font-extrabold text-8xl text-center z-20">{t('title')}</h1>
+            <h1 className="font-extrabold text-8xl text-center z-20 animation animate">{t('title')}</h1>
             <Hexagon />
             <DetailSection data={detailSectionContent} />
         </section>

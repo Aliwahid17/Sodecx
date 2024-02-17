@@ -10,7 +10,7 @@ const DetailSection = async ({ data }: PropsTypes) => {
     return (
         <div className="flex flex-col lg:flex-wrap lg:flex-row w-full items-center justify-center container gap-6 px-5 lg:px-24 mx-auto">
             {data.map((item, index) => (
-                <div className="flex w-full sm:w-3/4 lg:w-fit" key={index}>
+                <div className="flex w-full sm:w-3/4 lg:w-fit animation animate" key={index}>
                     <div>
                         <div className="relative  p-1   inline-flex items-center justify-center  overflow-hidden group rounded-full">
                             <span className="absolute left-10 bg-gradient w-full h-full rounded-md"></span>

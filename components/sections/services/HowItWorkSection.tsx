@@ -142,12 +142,12 @@ const HowItWorkSection = async () => {
     return (
         <section className=" lg:h-[calc(100vh-82px)] flex flex-col justify-center items-center relative ">
             <div className="container px-5 mx-auto xl:px-24">
-                <h2 className="font-semibold text-5xl pt-20 lg:pt-0 pb-10 text-center">{t('title')}</h2>
+                <h2 className="font-semibold text-5xl pt-20 lg:pt-0 pb-10 text-center animation animate">{t('title')}</h2>
             </div>
             <div className="flex  flex-col justify-center items-center gap-16">
-                <HowItWorkImage sx="xl:absolute right-10 " />
-                <Image src={Triangle} alt="Group of Triangles" width={172} height={146} className="hidden xl:block absolute top-[13%] left-14" />
-                <svg className="hidden xl:block absolute bottom-[13%] left-10" xmlns="http://www.w3.org/2000/svg" width="208" height="32" viewBox="0 0 208 32" fill="none">
+                <HowItWorkImage sx="xl:absolute right-10 animation-reverse animate" />
+                <Image src={Triangle} alt="Group of Triangles" width={172} height={146} className="hidden xl:block absolute top-[13%] left-14 animation animate" />
+                <svg className="hidden xl:block absolute bottom-[13%] left-10 animation animate" xmlns="http://www.w3.org/2000/svg" width="208" height="32" viewBox="0 0 208 32" fill="none">
                     <path d="M206.768 30.6649L206.768 1.66797L177.896 1.66797L177.896 30.6649L206.768 30.6649Z" stroke="#81FDE9" strokeWidth="1.41406" strokeMiterlimit="10" />
                     <path d="M147.754 30.6649L147.754 1.66797L118.882 1.66797L118.882 30.6649L147.754 30.6649Z" fill="#81FDE9" stroke="#81FDE9" strokeWidth="1.41406" strokeMiterlimit="10" />
                     <path d="M88.7324 30.6649L88.7324 1.66797L59.8608 1.66797L59.8608 30.6649L88.7324 30.6649Z" stroke="#F174FE" strokeWidth="1.41406" strokeMiterlimit="10" />
@@ -156,9 +156,9 @@ const HowItWorkSection = async () => {
 
                 <div className="flex flex-col w-full items-center justify-center px-2">
                     {detailSectionContent.map((item, index) => (
-                        <div key={index} className="flex flex-col justify-center items-center" >
+                        <div key={index} className="flex flex-col justify-center items-center " >
 
-                            <div className={`flex w-full ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} sm:w-3/4 lg:w-fit`} >
+                            <div className={`flex w-full ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} sm:w-3/4 lg:w-fit animation-bottom animate`} >
                                 <div>
                                     <div className="relative  p-1 inline-flex items-center justify-center  overflow-hidden group rounded-full">
                                         <span className={`absolute ${index % 2 === 0 ? "left-10" : "right-10"}  bg-gradient w-full h-full rounded-md`}></span>
@@ -179,7 +179,7 @@ const HowItWorkSection = async () => {
                                 </div>
                             </div>
 
-                            {index + 1 !== detailSectionContent.length && <svg xmlns="http://www.w3.org/2000/svg" className="py-2" width="6" height="117" viewBox="0 0 6 117" fill="none">
+                            {index + 1 !== detailSectionContent.length && <svg xmlns="http://www.w3.org/2000/svg" className="py-2 animation-bottom animate" width="6" height="117" viewBox="0 0 6 117" fill="none">
                                 <mask id="mask0_384_61695" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="0" y="0" width="6" height="117">
                                     <path d="M3 3L3 114.004" stroke="black" strokeWidth="4.94922" strokeLinecap="round" strokeDasharray="9.9 9.9" />
                                 </mask>

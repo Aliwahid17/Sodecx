@@ -12,10 +12,10 @@ const DetailSection = async () => {
         <section className="h-[calc(100vh-82px)] flex flex-col justify-center items-center relative ">
             <div className="container px-5 mx-auto xl:px-24">
                 <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-5">
-                    <h2 className="textColor lg:w-2/5">{t('title')}</h2>
+                    <h2 className="textColor lg:w-2/5 animation animate">{t('title')}</h2>
                     <div className="flex flex-col justify-center items-center gap-5 lg:w-3/5">
-                        <p>{t('description')}</p>
-                        <Button serverActions={contactForm} title={currentLocale === 'en' ? "Contact Us" : 'Contact'} />
+                        <p className="animation-reverse animate">{t('description')}</p>
+                        <Button serverActions={contactForm} className="animation-reverse animate" title={currentLocale === 'en' ? "Contact Us" : 'Contact'} />
                     </div>
                 </div>
             </div>

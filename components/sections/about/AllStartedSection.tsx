@@ -119,10 +119,10 @@ const AllStartedSection = async () => {
     return (
         <section className=" lg:h-[calc(100vh-82px)] flex flex-col justify-center items-center relative ">
             <div className="container px-5 mx-auto xl:px-24">
-                <h2 className="font-semibold text-5xl pt-20 pb-10 text-center">{t('title')}</h2>
+                <h2 className="font-semibold text-5xl pt-20 pb-10 text-center animation animate">{t('title')}</h2>
                 <div className="flex flex-col gap-7 justify-center items-center lg:flex-row lg:items-stretch">
                     {allStarted.map((value, key) => (
-                        <div key={key} className="relative p-1.5  inline-flex items-center w-full sm:w-3/4  justify-center overflow-hidden group rounded-[46px]">
+                        <div key={key} className="relative p-1.5  inline-flex items-center w-full sm:w-3/4  justify-center overflow-hidden group rounded-[46px] animation animate">
                             <div className="absolute bg-gradient w-full h-full"></div>
                             <div className="relative bg-light-primary dark:bg-dark-primary p-5 w-full h-full gap-5 rounded-[40px] flex items-center ">
                                 <div className="flex flex-col gap-5 h-full">

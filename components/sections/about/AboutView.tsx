@@ -6,7 +6,7 @@ import WhatWeDo from "./WhatWeDo"
 
 const AboutView = async () => {
     return (
-        <main>
+        <main className="overflow-x-hidden">
             <AboutSection />
             <WhatWeDo />
             <AllStartedSection />

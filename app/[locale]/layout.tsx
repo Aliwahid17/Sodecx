@@ -7,6 +7,7 @@ import { contactForm } from '@/server/contactForm'
 import { Toaster } from "@/components/ui/toaster"
 import type { Metadata } from 'next'
 import Favicon from '../favicon.webp'
+import Animation from '@/components/Animation'
 
 const urbanist = Urbanist({ subsets: ['latin'] })
 
@@ -26,12 +27,14 @@ export default async function RootLayout({
 
   return (
     <html lang={currentLocale} suppressHydrationWarning>
-      <body className={`${urbanist.className} dark:bg-dark-primary bg-light-primary text-dark-primary dark:text-light-primary `}>
+      <body className={`${urbanist.className} dark:bg-dark-primary bg-light-primary text-dark-primary dark:text-light-primary overflow-x-hidden scroll-smooth`}>
         <SettingsProvider attribute="class">
-          <Header serverActions={contactForm} />
-          {children}
-          <Toaster />
-          <Footer />
+          <Animation>
+            <Header serverActions={contactForm} />
+            {children}
+            <Toaster />
+            <Footer />
+          </Animation>
         </SettingsProvider>
       </body>
     </html>

@@ -1,6 +1,6 @@
 const Hexagon = () => {
     return (
-        <div className='flex justify-end w-full px-14 my-2 sm:px-20 md:px-32 lg:px-56'>
+        <div className='flex justify-end w-full px-14 my-2 sm:px-20 md:px-32 lg:px-56 animation-reverse animate'>
             <svg width="55" height="50" viewBox="0 0 55 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M40.7887 49.0277H14.0222C13.7943 49.0277 13.583 48.9026 13.469 48.7006L0.0854594 24.9096C-0.0284865 24.7068 -0.0284865 24.4566 0.0854594 24.2531L13.469 0.46145C13.583 0.25938 13.7943 0.134277 14.0222 0.134277H40.7887C41.0165 0.134277 41.2278 0.25938 41.3418 0.46145L54.7254 24.2531C54.8393 24.4559 54.8393 24.7061 54.7254 24.9096L41.3418 48.7006C41.2278 48.9026 41.0173 49.0277 40.7887 49.0277ZM14.3907 47.7168H40.4201L53.4345 24.5817L40.4201 1.44588H14.3907L1.37637 24.5817L14.3907 47.7168Z" className='fill-dark-primary dark:fill-light-primary' />
                 <path d="M14.0215 0.790039H40.788L27.3632 24.5817L14.0215 0.790039Z" fill="#81FDE9" />

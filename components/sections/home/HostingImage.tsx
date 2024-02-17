@@ -14,7 +14,7 @@ const HostingImage = () => {
     }, [theme])
 
     return (
-        <Image src={source} alt="Laptop" width={359} height={326} />
+        <Image src={source} alt="Laptop" width={359} height={326} className='animation animate'/>
     )
 }
 

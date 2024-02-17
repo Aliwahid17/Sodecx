@@ -117,7 +117,7 @@ const Header = ({ serverActions }: { serverActions: (formData: FormData) => Prom
               <Image src={'../assets/icons/line.svg'} className="hidden lg:flex" alt="Line" width={50} height={13} />
             </div>
 
-            <span className={`${openNav || !isVisible ? `opacity-0 delay-75` : 'opacity-100'} -z-20  transition-opacity duration-500 absolute bg-gradient w-[295px] h-[295px]  rounded-[295px] lg:w-[389px] lg:h-[389px] lg:rounded-[389px] xl:w-[519px] xl:h-[519px] xl:rounded-[519px] -top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`} />
+            <span className={`${openNav || !isVisible ? `opacity-0 delay-75` : 'opacity-100'} -z-20 transition-opacity duration-500 absolute bg-gradient w-[295px] h-[295px]  rounded-[295px] lg:w-[389px] lg:h-[389px] lg:rounded-[389px] xl:w-[519px] xl:h-[519px] xl:rounded-[519px] -top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`} />
 
             {toggleButton}
 

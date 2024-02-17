@@ -13,7 +13,7 @@ const FAQSection = ({ faq }: { faq: { title: string, description: string }[] }) 
     return (
         <div className="mt-8 space-y-8">
             {faq.map((value, key) => (
-                <div key={key} className="relative p-1.5 inline-flex items-center w-full  justify-center overflow-hidden group rounded-[46px]">
+                <div key={key} className="relative p-1.5 inline-flex items-center w-full  justify-center overflow-hidden group rounded-[46px] animation animate">
                     <div className="absolute bg-gradient w-full h-full"></div>
                     <div className="relative bg-light-primary dark:bg-dark-primary px-3 py-5 w-full h-full gap-5 rounded-[40px] flex items-center ">
                         <div className="rounded-lg px-4 w-full">

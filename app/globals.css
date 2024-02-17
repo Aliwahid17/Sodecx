@@ -64,3 +64,50 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.animation {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.animation-reverse {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+.animation-bottom {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(100%);
+    transition: all 1s;
+}
+
+.show-animation {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.animate:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.animate:nth-child(3) {
+    transition-delay: 400ms;
+}
+
+.animate:nth-child(4) {
+    transition-delay: 600ms;
+}
+
+.animate:nth-child(5) {
+    transition-delay: 800ms;
+}
+
+.animate:nth-child(6) {
+    transition-delay: 1000ms;
+}

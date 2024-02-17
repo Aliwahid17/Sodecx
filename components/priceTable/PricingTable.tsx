@@ -7,7 +7,7 @@ const PricingTable = ({ pricing, showMonth }: { pricing: PricingTableTypes[], sh
     return (
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-2 xl:gap-10 justify-center items-center lg:items-stretch ">
             {pricing.map((value, key) => (
-                <div key={key} className="relative p-1.5 mx-1.5 inline-flex items-center w-full sm:w-3/4  justify-center overflow-hidden group rounded-[46px]">
+                <div key={key} className="animation animate  relative p-1.5 mx-1.5 inline-flex items-center w-full sm:w-3/4  justify-center  overflow-hidden group rounded-[46px]">
                     <div className="absolute bg-gradient w-full h-full"></div>
                     <div className="relative bg-light-primary dark:bg-dark-primary px-2 pt-6 pb-36 w-full h-full gap-10 rounded-[40px] flex flex-col items-center ">
                         <div className="flex flex-col gap-4 items-center text-center">
